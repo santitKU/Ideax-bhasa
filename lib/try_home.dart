@@ -13,7 +13,7 @@ class HomePage2 extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage2> {
-  final AudioCache audioCache = AudioCache();
+  final player = AudioPlayer();
   @override
   void initState() {
     super.initState();
@@ -162,33 +162,63 @@ class _HomePageState extends State<HomePage2> {
                         Container(
                           height: 200,
                           width: 200,
-                          child: Text("आंखि झ्या:",
-                              style: TextStyle(
-                                  color: Colors.black54, fontSize: 45)),
+                          child: Row(
+                            children: [
+                              Text(
+                                'लाखे',
+                                style: TextStyle(
+                                    color: Colors.black54, fontSize: 45),
+                              ), // Replace 'Your Text' with your desired text
+                              IconButton(
+                                icon: Icon(Icons
+                                    .volume_up), // You can use any audio icon you like
+                                onPressed: () =>
+                                    player.play(AssetSource('audio/l.m4a')),
+                              ),
+                            ],
+                          ),
                         )
                       else if (_predictions[0]['label'].toString() ==
                           "आंखि झ्या:")
                         Container(
                           height: 200,
                           width: 200,
-                          child: Center(
-                            child: Text(
-                              "आंखि झ्या:",
-                              style: TextStyle(
-                                  color: Colors.black54, fontSize: 45),
-                            ),
+                          child: Row(
+                            children: [
+                              Text(
+                                'आंखि झ्या:',
+                                style: TextStyle(
+                                    color: Colors.black54, fontSize: 45),
+                              ), // Replace 'Your Text' with your desired text
+                              IconButton(
+                                icon: Icon(Icons
+                                    .volume_up), // You can use any audio icon you like
+                                onPressed: () =>
+                                    player.play(AssetSource('audio/aj.m4a')),
+                              ),
+                            ],
                           ),
                         )
                       else
                         Container(
                           height: 200,
                           width: 200,
-                          child: Text(
-                            "स्वां",
-                            style:
-                                TextStyle(color: Colors.black54, fontSize: 45),
+                          child: Row(
+                            children: [
+                              Text(
+                                'स्वां',
+                                style: TextStyle(
+                                    color: Colors.black54, fontSize: 45),
+                              ), // Replace 'Your Text' with your desired text
+                              IconButton(
+                                icon: Icon(Icons
+                                    .volume_up), // You can use any audio icon you like
+                                onPressed: () =>
+                                    player.play(AssetSource('audio/s.m4a')),
+                              ),
+                            ],
                           ),
-                        ),
+                        )
 
                       // Text(_predictions[0]['label'].toString().substring(1)),
                       // Text(
