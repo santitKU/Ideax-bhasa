@@ -1,16 +1,18 @@
-# signbloom
+# Bhasa
 
-A new Flutter project.
+
+Learn language from vision.
+
+## Collaborators
+- Rakshya Bhusal
+- Siddhartha Devkota
+- Santit Shakya
 
 ## Getting Started
+1. Setup the  requirements. Run following code to get all flutter packages:
+``` flutter pub get```
+2. Launch virtual device or connect your phone with USB debugging on
+3. Run the app by running the command:
+   ``` flutter run  ```
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
