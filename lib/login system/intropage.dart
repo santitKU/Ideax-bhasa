@@ -20,7 +20,7 @@ class Intropage extends StatelessWidget {
                 child: Text("Bhasa",
                     style: GoogleFonts.getFont("DM Sans",
                         textStyle: const TextStyle(
-                            color: Colors.red,
+                            // color: Colors.red,
                             fontWeight: FontWeight.w400,
                             fontSize: 35))),
               ),
@@ -31,7 +31,7 @@ class Intropage extends StatelessWidget {
                 padding: const EdgeInsets.fromLTRB(48, 8, 8, 8),
                 child: Image.asset(
                   "assets/BHASA4.png",
-                  color: Colors.red,
+                  color: Colors.grey[700],
                   width: size.width * 0.4,
                 ),
               ),
@@ -52,7 +52,7 @@ class Intropage extends StatelessWidget {
               ),
               const Center(
                 child: Text(
-                  'A JOURNEY OF....',
+                  'Break Your Language',
                   style: TextStyle(
                       color: Colors.black,
                       fontSize: 30,
@@ -64,9 +64,9 @@ class Intropage extends StatelessWidget {
               ),
               const Center(
                 child: Text(
-                  'UNDERSTANDING',
+                  'Barrier',
                   style: TextStyle(
-                      color: Colors.red,
+                      // color: Colors.red,
                       fontSize: 30,
                       fontWeight: FontWeight.bold),
                 ),
@@ -96,7 +96,7 @@ class Intropage extends StatelessWidget {
                     child: TextButton(
                         onPressed: () {},
                         style: TextButton.styleFrom(
-                            backgroundColor: Colors.redAccent,
+                            backgroundColor: Colors.orange[800],
                             shape: const RoundedRectangleBorder(
                               borderRadius: BorderRadius.zero,
                             )),
@@ -116,7 +116,7 @@ class Intropage extends StatelessWidget {
                       }));
                     },
                     style: TextButton.styleFrom(
-                        backgroundColor: Colors.redAccent,
+                        backgroundColor: Colors.orange[800],
                         shape: const RoundedRectangleBorder(
                           borderRadius: BorderRadius.zero,
                         )),

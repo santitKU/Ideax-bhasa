@@ -2,6 +2,8 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:flutter_tflite/flutter_tflite.dart';
+import 'package:audioplayers/audioplayers.dart';
+// import 'package:audioplayers/audio_cache.dart';
 
 class HomePage2 extends StatefulWidget {
   const HomePage2({super.key});
@@ -11,6 +13,7 @@ class HomePage2 extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage2> {
+  final AudioCache audioCache = AudioCache();
   @override
   void initState() {
     super.initState();
@@ -63,7 +66,19 @@ class _HomePageState extends State<HomePage2> {
     detect_image(_image);
   }
 
+  AudioPlayer audioPlayer = AudioPlayer();
   Widget build(BuildContext context) {
+    Future<void> playAudio() async {
+      // onPressed: () => AudioPlayer().play(AssetSource('audio/my_audio.mp3'));
+    }
+
+    @override
+    void dispose() {
+      audioPlayer
+          .dispose(); // Dispose of the audio player when the widget is removed
+      super.dispose();
+    }
+
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -75,15 +90,9 @@ class _HomePageState extends State<HomePage2> {
                 width: double.infinity,
                 child: Center(
                   child: Container(
-                      decoration: const BoxDecoration(color: Colors.black),
-                      child: const Center(
-                        child: Text(
-                          'Bhasa',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 30,
-                              fontWeight: FontWeight.bold),
-                        ),
+                      decoration: const BoxDecoration(color: Colors.grey),
+                      child: Center(
+                        child: Image.asset("assets/BHASA4.png"),
                       )),
                 )),
             const SizedBox(
@@ -153,22 +162,32 @@ class _HomePageState extends State<HomePage2> {
                         Container(
                           height: 200,
                           width: 200,
-                          child: Text("लाखे"),
+                          child: Text("आंखि झ्या:",
+                              style: TextStyle(
+                                  color: Colors.black54, fontSize: 45)),
                         )
-
-                        
                       else if (_predictions[0]['label'].toString() ==
                           "आंखि झ्या:")
                         Container(
                           height: 200,
                           width: 200,
-                          child: Text("आंखि झ्या:"),
+                          child: Center(
+                            child: Text(
+                              "आंखि झ्या:",
+                              style: TextStyle(
+                                  color: Colors.black54, fontSize: 45),
+                            ),
+                          ),
                         )
                       else
                         Container(
                           height: 200,
                           width: 200,
-                          child: Text("स्वां", ),
+                          child: Text(
+                            "स्वां",
+                            style:
+                                TextStyle(color: Colors.black54, fontSize: 45),
+                          ),
                         ),
 
                       // Text(_predictions[0]['label'].toString().substring(1)),
